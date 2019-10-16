@@ -22,8 +22,10 @@ function GameObject(attrs) {
   
 
 } //closes GAMEOBJECT
-GameObject.prototype.destroy = function(){
-  return `${this.name} was removed from the game.`;
+
+
+ GameObject.prototype.destroy = function() {
+   return `${this.name} was removed from the game`;
 };
 /*
   === CharacterStats ===
@@ -35,10 +37,11 @@ function CharacterStats(attrs) {
   GameObject.call(this, attrs);
   this.healthPoints = attrs.healthPoints,
   this.name = attrs.name
-
+}//closes CharacterStats
+//Inheritence statement////////////
   CharacterStats.prototype = Object.create(GameObject.prototype);
 
-}//closes CharacterStats
+/////constructor Method/////////
 CharacterStats.prototype.takeDamage = function(){
   return `${this.name} took damage.`;
 };
@@ -51,14 +54,18 @@ CharacterStats.prototype.takeDamage = function(){
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
-function Humanoid(attrs) {
-  CharacterStats.call(this, attrs);
+function Humanoid(attrs) {  
+  //////////////////////////////
   this.team = attrs.team
   this.weapons = attrs.weapons
   this.language = attrs.language
-
+  ///////////////////////////////
+  CharacterStats.call(this, attrs);
 }
-  Humanoid.prototype = Object.create(CharacterStats.prototype)
+
+/////////Inheritance/////////////////
+  Humanoid.prototype = Object.create(CharacterStats.prototype);
+ //////////////////////////////////////// 
   Humanoid.prototype.greet = function(){
     return `${this.name} offers a greeting in ${this.language}.`;
  };
@@ -68,7 +75,7 @@ function Humanoid(attrs) {
   * Instances of CharacterStats should have all of the same properties as GameObject.
 */
 
-// Test you work by un-commenting these 3 objects and the list of console logs below:
+// Test your work by un-commenting these 3 objects and the list of console logs below:
 
 
   const mage = new Humanoid({
