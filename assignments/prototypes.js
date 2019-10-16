@@ -127,7 +127,45 @@ function Humanoid(attrs) {
     ],
     language: 'Elvish',
   });
-
+///////////start Villian Contructor///////////////////////////////////
+const vile = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 4,
+    width: 2,
+    height: 6,
+  },
+  healthPoints: 25,
+  name:'The Donald',
+  team: 'Hells Angels',
+  weapons: [
+    'Mjolinar', 'Insanity', 'Bag-O-Plenty', 'Red Light-Saber'
+  ],
+  language: 'Evileen',
+  intelligence: 120,
+  charisma: "Evil Genius",
+  opponentsHealth: 75
+});
+///////My Hero//////////////////////////////
+const blade = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 1,
+    height: 3,
+  },
+  healthPoints: 25,
+  name:'Blade',
+  team: 'Rocket',
+  weapons: [
+    'Magic', 'Grit and Determination', 'A Damsel', 'Light-Saber'
+  ],
+  language: 'multi-lingual',
+  intelligence: 'smart-enough',
+  charisma: "Like Ali, I'm a pretty man",
+  opponentsHealth: 25
+});
+////////Implement testing//////////////////////////////////////////////
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
@@ -138,6 +176,7 @@ function Humanoid(attrs) {
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+
 
 
   // Stretch task: 
