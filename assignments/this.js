@@ -46,5 +46,20 @@ function NicePerson(greeter) {
 // code example for New Binding
 
 // Principle 4
+function dude(){
+  console.log(this.sup);
+}
 
-// code example for Explicit Binding
+let donnie = {
+  name: 'Donnie',
+  sup: "What's a pedarest Walter?"
+}
+
+let walter = {
+  name: 'Walter',
+  sup: 'Shut up Donnie!'
+}
+
+dude.call(donnie); //invoking the function here
+dude.call(walter);
+//code example for explicit
